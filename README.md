@@ -12,21 +12,6 @@ This repository provides code and example data files for the proposed Physics-In
 
 The current release is intended to support review, reproducibility checks, and future open-source maintenance. Only representative data samples are included in this repository; complete public datasets should be downloaded from their original sources.
 
-## Repository Structure
-
-```text
-.
-|-- main.py                     # Example experiment entry point
-|-- model/
-|   `-- PIW2L/
-|       `-- PIW2L.py             # PIW2L/PINN model implementation
-|-- visualization/
-|   `-- draw_SOH.py              # SOH/capacity prediction visualization helper
-`-- dataet/
-    |-- B20/                     # Example file from the B20 dataset
-    `-- LP/                      # Partial LP sample data
-```
-
 ## Data Availability
 
 This work uses three real-world battery-pack datasets: **B20**, **VST**, and **LP**. To keep the repository lightweight and comply with data access restrictions, only sample files are provided.
@@ -47,44 +32,13 @@ Recommended dependencies:
 
 ```text
 python >= 3.10
-torch
-numpy
-matplotlib
-```
-
-Install the dependencies in a clean environment, for example:
-
-```bash
-pip install torch numpy matplotlib
+torch == 2.1.1+cu118
+numpy >= 1.26.4
+matplotlib >= 3.7.1
 ```
 
 If you use CUDA, install the PyTorch build that matches your local CUDA version following the official PyTorch installation instructions.
 
-## Quick Start
-
-1. Prepare the dataset files.
-
-   Place downloaded or preprocessed dataset files under the corresponding dataset directory. The current example layout uses:
-
-   ```text
-   dataet/B20/
-   dataet/VST/
-   dataet/LP/
-   ```
-
-2. Configure the experiment.
-
-   Edit the dataset name, training battery, window size, prediction length, and training hyperparameters in `main.py`.
-
-3. Run training.
-
-   ```bash
-   python main.py
-   ```
-
-4. Visualize predictions.
-
-   The helper in `visualization/draw_SOH.py` can be used to plot predicted and true SOH/capacity trajectories.
 
 ## Citation
 
