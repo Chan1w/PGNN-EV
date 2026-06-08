@@ -26,13 +26,12 @@ class MLP(nn.Module):
                 layers.append(Sin())
             elif i == layers_num - 1:
                 layers.append(nn.Linear(hidden_dim, output_dim))
-            else:  # 隐藏层
+            else:  
                 layers.append(nn.Linear(hidden_dim, hidden_dim))
                 layers.append(Sin())
                 layers.append(nn.Dropout(p=dropout))
         self.net = nn.Sequential(*layers)
 
-        # 权重初始化
         self._init_weights()
 
     def _init_weights(self):
@@ -85,11 +84,10 @@ class Solution_u(nn.Module):
         self.predictor = Predictor(input_dim=input_dim)
 
     def forward(self, x):
-        # x = x.permute(0, 2, 1)   #(1,15)
-        x = self.conv1(x)   #(2048,15)
-        x = self.conv2(x)   #(2048,15)
+        x = self.conv1(x)   
+        x = self.conv2(x)   
         x = self.Encoder(x)
-        x = x.contiguous().view(x.size(0), -1)  # Shape: (batch_size, d_model * 2 * (seq_len-4))
+        x = x.contiguous().view(x.size(0), -1) 
         x = self.predictor(x)
         x = x.view(x.shape[0], -1, self.args.pred_len)
         return x
