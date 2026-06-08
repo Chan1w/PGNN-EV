@@ -20,7 +20,7 @@ This work uses three real-world battery-pack datasets: **B20**, **VST**, and **L
 | --- | --- | --- |
 | B20 | Public dataset | The dataset is publicly available at: <https://github.com/BatICM/battery-charging-data-of-on-road-electric-vehicles>. This repository includes one example file for format reference only. |
 | VST | Public dataset | The dataset is publicly available at: <https://www.nature.com/articles/s41467-025-56485-7#Sec16>. Please obtain the complete data from the original source. |
-| LP | Restricted enterprise dataset | The full LP dataset is confidential and cannot be redistributed. This repository only provides a partial sample for demonstrating the data format and processing workflow. |
+| LP | Restricted enterprise dataset | The full LP dataset is confidential real-world operation data provided by Leapmotor and cannot currently be redistributed due to privacy and confidentiality agreements. We are actively communicating with the data provider regarding the possible release of more compliant and anonymized data in the future. |
 
 When using the public datasets, please follow the data licenses, citation requirements, and usage terms specified by the original dataset providers.
 
