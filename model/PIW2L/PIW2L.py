@@ -26,13 +26,13 @@ class MLP(nn.Module):
                 layers.append(Sin())
             elif i == layers_num - 1:
                 layers.append(nn.Linear(hidden_dim, output_dim))
-            else:  # 隐藏层
+            else:  
                 layers.append(nn.Linear(hidden_dim, hidden_dim))
                 layers.append(Sin())
                 layers.append(nn.Dropout(p=dropout))
         self.net = nn.Sequential(*layers)
 
-        # 权重初始化
+        
         self._init_weights()
 
     def _init_weights(self):
